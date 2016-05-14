@@ -1,3 +1,4 @@
+require 'rainbow'
 class Chess
 	attr_accessor :gameboard
 	def initialize
@@ -69,10 +70,10 @@ class Knight < Chess
 	end
 
 	def print_solution
-		puts "You made it in #{@solution_array.length - 1} moves!"
+		puts "You made it in " +Rainbow("#{@solution_array.length - 1} moves!").red
 		puts "Heres your path:"
 		@solution_array.reverse.each do |i|
-			puts gameboard[i].to_s
+			puts Rainbow(gameboard[i].to_s).white
 		end
 	end
 
